@@ -1,0 +1,39 @@
+current directory: /home/sert/rails_project/sample/vendor/bundle/ruby/2.3.0/gems/thin-1.6.4/ext/thin_parser
+/usr/bin/ruby -r ./siteconf20160109-5684-gf39fv.rb extconf.rb
+checking for main() in -lc... yes
+creating Makefile
+
+To see why this extension failed to compile, please check the mkmf.log which can be found here:
+
+  /home/sert/rails_project/sample/vendor/bundle/ruby/2.3.0/extensions/x86_64-linux/2.3.0/thin-1.6.4/mkmf.log
+
+current directory: /home/sert/rails_project/sample/vendor/bundle/ruby/2.3.0/gems/thin-1.6.4/ext/thin_parser
+make "DESTDIR=" clean
+
+current directory: /home/sert/rails_project/sample/vendor/bundle/ruby/2.3.0/gems/thin-1.6.4/ext/thin_parser
+make "DESTDIR="
+compiling thin.c
+thin.c: 関数 ‘Thin_HttpParser_alloc’ 内:
+thin.c:242:3: 警告: 関数 ‘thin_http_parser_init’ の暗黙的な宣言です [-Wimplicit-function-declaration]
+   thin_http_parser_init(hp);
+   ^
+thin.c: 関数 ‘Thin_HttpParser_finish’ 内:
+thin.c:294:3: 警告: 関数 ‘thin_http_parser_finish’ の暗黙的な宣言です [-Wimplicit-function-declaration]
+   thin_http_parser_finish(http);
+   ^
+thin.c:296:10: 警告: 関数 ‘thin_http_parser_is_finished’ の暗黙的な宣言です [-Wimplicit-function-declaration]
+   return thin_http_parser_is_finished(http) ? Qtrue : Qfalse;
+          ^
+thin.c: 関数 ‘Thin_HttpParser_execute’ 内:
+thin.c:334:5: 警告: 関数 ‘thin_http_parser_execute’ の暗黙的な宣言です [-Wimplicit-function-declaration]
+     thin_http_parser_execute(http, dptr, dlen, from);
+     ^
+thin.c:338:8: 警告: 関数 ‘thin_http_parser_has_error’ の暗黙的な宣言です [-Wimplicit-function-declaration]
+     if(thin_http_parser_has_error(http)) {
+        ^
+compiling parser.c
+linking shared-object thin_parser.so
+
+current directory: /home/sert/rails_project/sample/vendor/bundle/ruby/2.3.0/gems/thin-1.6.4/ext/thin_parser
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 thin_parser.so ./.gem.20160109-5684-qitfl6

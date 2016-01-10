@@ -1,0 +1,31 @@
+/usr/bin/ruby -r ./siteconf20151031-408-yuzbq4.rb extconf.rb
+checking for main() in -lc... yes
+creating Makefile
+
+make "DESTDIR=" clean
+
+make "DESTDIR="
+compiling thin.c
+thin.c: 関数 ‘Thin_HttpParser_alloc’ 内:
+thin.c:242:3: 警告: 関数 ‘thin_http_parser_init’ の暗黙的な宣言です [-Wimplicit-function-declaration]
+   thin_http_parser_init(hp);
+   ^
+thin.c: 関数 ‘Thin_HttpParser_finish’ 内:
+thin.c:294:3: 警告: 関数 ‘thin_http_parser_finish’ の暗黙的な宣言です [-Wimplicit-function-declaration]
+   thin_http_parser_finish(http);
+   ^
+thin.c:296:10: 警告: 関数 ‘thin_http_parser_is_finished’ の暗黙的な宣言です [-Wimplicit-function-declaration]
+   return thin_http_parser_is_finished(http) ? Qtrue : Qfalse;
+          ^
+thin.c: 関数 ‘Thin_HttpParser_execute’ 内:
+thin.c:334:5: 警告: 関数 ‘thin_http_parser_execute’ の暗黙的な宣言です [-Wimplicit-function-declaration]
+     thin_http_parser_execute(http, dptr, dlen, from);
+     ^
+thin.c:338:8: 警告: 関数 ‘thin_http_parser_has_error’ の暗黙的な宣言です [-Wimplicit-function-declaration]
+     if(thin_http_parser_has_error(http)) {
+        ^
+compiling parser.c
+linking shared-object thin_parser.so
+
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 thin_parser.so ./.gem.20151031-408-38lodf
